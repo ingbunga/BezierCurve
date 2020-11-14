@@ -7,18 +7,32 @@
             width: 100%;
             height: 100%;
             margin: 0px;
+            padding: 0px;
         }
         canvas{
-            margin: 10px;
-            background-color: white;
+            position: absolute;
+            background-color: rgba(0,0,0,0);
+            width: 100%;
+            height: 100%;
         }
         .dot{
+            z-index: 1;
             position: absolute;
-            border: 1px solid blue;
-            width: 8px;
-            height: 8px;
-            background-color: white;
-            border-radius: 8px;
+            border: 1px solid #2383bf;
+            width: 9px;
+            height: 9px;
+            background-color: rgba(0,0,0,0);
+            border-radius: 9px;
+            -webkit-user-drag: element;
+            transition: 500ms background-color;
+        }
+        .dot:hover{
+            background-color: #2383bf;
+        }
+        #drawBtn{
+            position: absolute;
+            right: 5px;
+            top: 5px;
         }
     </style>
 </head>
@@ -28,6 +42,8 @@
     <div id="dot3" class="dot"></div>
     <div id="dot4" class="dot"></div>
     <canvas width="100" height="100" id="draw"></canvas>
+    <canvas width="100" height="100" id="save"></canvas>
+    <button id="drawBtn">draw</button>
     <script src="index.js"></script>
 </body>
 </html>
